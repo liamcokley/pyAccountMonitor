@@ -43,7 +43,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/pyAccountMonitor:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/pyaccountmonitor:latest
       
       - name: Image Digest
         run: echo ${{ steps.docker_build.outputs.digest }}
