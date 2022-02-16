@@ -1,3 +1,4 @@
+import piecash
 import mysql.connector
 import json
 from flask import Flask
@@ -6,15 +7,23 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, Docker - Again!'
+    return 'Hello, Liam - Another test :)!'
+
+@app.route('/accounts')
+def get_accounts() :
+    book = piecash.open_book(uri_conn="mysql://root:m92yrl42@localhost:3306/gnucash")
+
+    json_data=[]
+
+    return json.dumps(json_data)
 
 @app.route('/widgets')
 def get_widgets() :
     mydb = mysql.connector.connect(
         host="mysqldb",
         user="root",
-        password="p@ssw0rd1",
-        database="inventory"
+        password="m92yrl42",
+        database="gnucash"
     )
     cursor = mydb.cursor()
 
@@ -36,7 +45,7 @@ def db_init():
     mydb = mysql.connector.connect(
         host="mysqldb",
         user="root",
-        password="p@ssw0rd1"
+        password="m92yrl42"
     )
     cursor = mydb.cursor()
 
@@ -47,7 +56,7 @@ def db_init():
     mydb = mysql.connector.connect(
         host="mysqldb",
         user="root",
-        password="p@ssw0rd1",
+        password="m92yrl42",
         database="inventory"
     )
     cursor = mydb.cursor()
