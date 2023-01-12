@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Upload Transactions</title>
+  </head>
+  <body>
+
+    <style>
+      table {
+          border-collapse: collapse;
+          border: 2px solid black;
+      }
+      td {
+          border: 1px solid black;
+          padding: 0.5em;
+      }
+    </style>
+
+    <form method="POST" action="/process_csv" enctype="multipart/form-data">
+        <input type="file" name="csv_file">
+        <input type="submit" value="Submit">
+    </form>
+
+
+
+
+</body>
+</html>
